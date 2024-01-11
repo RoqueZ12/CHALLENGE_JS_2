@@ -90,6 +90,12 @@ input[type="range"]::-webkit-slider-thumb {
   appearance: none;                /* Eliminar estilos nativos del pulgar */
   width: 0;                        /* Ocultar el pulgar */
 }
+/* Estilo para el pulgar (thumb) en diferentes navegadores */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 0;
+
+}
 
 /* Contenedor de botones */
 .buttons-container {
@@ -128,7 +134,6 @@ button {
   background: linear-gradient(to right, #c93b76 0%, #c93b76 0%, #ffffff 0%, #ffffff 100%);
 }
 
-/* Estilo para cambiar el color de la barra de progreso */
-#seek-bar::-webkit-slider-runnable-track {
-  background: linear-gradient(to right, #c93b76 0%, #c93b76 calc(100% - 5px), #ffffff calc(100% - 5px), #ffffff 100%);
-}
+
+
+
