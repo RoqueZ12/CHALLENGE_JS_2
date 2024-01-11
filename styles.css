@@ -12,7 +12,7 @@ body {
   align-items: center;             /* Centrar verticalmente */
   justify-content: center;         /* Centrar horizontalmente */
   height: 100vh;                   /* Ocupar toda la altura de la ventana */
-  background: linear-gradient(to top, #C93B76, #212936, #4D5562);
+  background-image: url('assets/bg.jpg');
 
 }
 
