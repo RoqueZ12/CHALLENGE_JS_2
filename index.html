@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reproductor de Música</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Contenedor General -->
+    <div id="contenedor1" class="music-player">
+      <!-- imagen de la musica -->
+      <div class="cover-image">
+        <img id="music-img" />
+      </div>
+      <!-- seccion de los detalles de la musica -->
+      <div class="song-details">
+        <h2 id="song-title"></h2>
+        <p id="song-artist"></p>
+      </div>
+      <!-- estructura para reproducir musica -->
+      <div class="controls">
+        <!-- el audio -->
+        <audio id="audio-player">
+          <!-- <source src="assets/forest-lullaby-110624.mp3" type="audio/mpeg" /> -->
+        </audio>
+        <!-- contenedor para la barra de progreso asi como el tiempo -->
+        <div class="progress-container">
+          <span id="current-time">0:00</span>
+          <div class="progress-bar">
+            <input type="range" id="seek-bar" value="0" />
+          </div>
+          <span id="duration">0:00</span>
+        </div>
+        <!-- contenedor de los botones para manejar la musica -->
+        <div class="buttons-container">
+          <!-- btn de retroceder -->
+          <button onclick="backMusic()">
+            <i class="fas fa-backward"></i>
+          </button>
+          <!-- contenedor circulas para el btn play/pause -->
+          <div class="buttons" onclick="toggle()">
+            <!-- btn play -->
+            <button
+              id="play"
+              style="display: inline-block"
+              onclick="playMusic()"
+            >
+              <i class="fas fa-play"></i>
+            </button>
+            <!-- btn pause -->
+            <button id="pause" style="display: none" onclick="pauseMusic()">
+              <i class="fas fa-pause"></i>
+            </button>
+          </div>
+          <!-- btn avanzar -->
+          <button onclick="forwardMusic()">
+            <i class="fas fa-forward"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="music.js"></script>
+  </body>
+</html>

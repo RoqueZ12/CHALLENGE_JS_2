@@ -1,0 +1,134 @@
+/* Reset de estilos básicos para eliminar márgenes y rellenos predeterminados */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+  font-family: 'Inter', sans-serif;  /* Fuente principal */
+  background-color: #f4f4f4;       /* Color de fondo */
+  display: flex;
+  align-items: center;             /* Centrar verticalmente */
+  justify-content: center;         /* Centrar horizontalmente */
+  height: 100vh;                   /* Ocupar toda la altura de la ventana */
+  background: linear-gradient(to top, #C93B76, #212936, #4D5562);
+
+}
+
+/* Estilos para el reproductor de música */
+.music-player {
+  max-width: 300px;                /* Ancho máximo */
+  background-color: #212936;       /* Color de fondo */
+  position: relative;
+  width: 100%;                     /* Ocupar todo el ancho */
+  padding: 20px;                   /* Espaciado interior */
+  border-radius: 20px;             /* Bordes redondeados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilos para la imagen de portada */
+.cover-image img {
+  border-radius: 20px;             /* Bordes redondeados */
+  width: 100%;                     /* Ancho completo */
+  object-fit: cover;               /* Ajuste de la imagen */
+}
+
+/* Detalles de la canción */
+.song-details {
+  display: grid;
+  place-items: center;             /* Centrar contenido */
+  margin: 15px auto;               /* Espaciado alrededor */
+}
+
+.song-details h2 {
+  color: #e5e7eb;                  /* Color del título */
+  font-size: 1rem;                 /* Tamaño del título */
+  margin-bottom: 5px;
+}
+
+.song-details p {
+  color: #4d5562;                  /* Color del texto secundario */
+  font-size: 0.75rem;                 /* Tamaño del texto secundario */
+}
+
+/* Controles de reproducción */
+.controls {
+  margin-top: 20px;                /* Espaciado superior */
+}
+
+/* Contenedor de la barra de progreso */
+.progress-container {
+  display: flex;
+  justify-content: space-between;  /* Espacio entre elementos */
+  position: relative;              /* Posición relativa para posicionar los tiempos */
+  margin-bottom: 40px;            /* Espaciado inferior */
+}
+
+/* Barra de progreso */
+.progress-bar, input[type="range"] {
+  width: 100%;                     /* Ancho completo */
+  margin-top: 10px;                /* Espaciado superior */
+  height: 5px;                     /* Grosor de la barra */
+  border-radius: 10px;             /* Bordes redondeados */
+  appearance: none;                /* Eliminar estilos nativos */
+}
+
+/* Tiempos de reproducción */
+#current-time, #duration {
+  position: absolute;              /* Posición absoluta para superponer */
+  font-size: 0.625rem;                 /* Tamaño del texto */
+  color: #4d5562;                  /* Color del texto */
+}
+
+#current-time { left: 0; }        /* Posiciona a la izquierda */
+#duration { right: 0; }           /* Posiciona a la derecha */
+
+/* Estilos para el input de rango (barra de progreso) */
+input[type="range"]::-moz-range-thumb, 
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;                /* Eliminar estilos nativos del pulgar */
+  width: 0;                        /* Ocultar el pulgar */
+}
+
+/* Contenedor de botones */
+.buttons-container {
+  display: flex;                   /* Contenedor flex */
+  justify-content: center;         /* Centrar horizontalmente */
+  align-items: center;             /* Centrar verticalmente */
+  cursor: pointer;                 /* Cursor de apuntador */
+}
+
+.buttons-container > *:not(:first-child):not(:last-child) {
+  margin: 0 25px;                  /* Margen para elementos intermedios */
+}
+
+/* Estilos para botones */
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: #c93b76;       /* Color de fondo */
+  border-radius: 50%;              /* Hacer el botón circular */
+}
+
+button {
+  background: none;                /* Fondo transparente */
+  border: none;                    /* Sin borde */
+  cursor: pointer;                 /* Cursor de apuntador */
+  font-size: 16px;                 /* Tamaño del ícono */
+  color: #fff;                     /* Color del ícono */
+  outline: none;                   /* Eliminar contorno al hacer clic */
+}
+
+/* Estilo base para la barra de progreso */
+#seek-bar {
+  background: linear-gradient(to right, #c93b76 0%, #c93b76 0%, #ffffff 0%, #ffffff 100%);
+}
+
+/* Estilo para cambiar el color de la barra de progreso */
+#seek-bar::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #c93b76 0%, #c93b76 calc(100% - 5px), #ffffff calc(100% - 5px), #ffffff 100%);
+}
