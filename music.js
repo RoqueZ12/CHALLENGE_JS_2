@@ -27,6 +27,8 @@ const music = [
 ]
 //declaramos el indice
 let currentSongIndex = 0;
+// Variable para guardar la posición actual del audio
+let pausedTime = 0;
 
 // Función para reproducir música
 function playMusic() {
@@ -35,6 +37,13 @@ function playMusic() {
   image.src = currentSong.img;
   songTitle.textContent = currentSong.title;
   songArtist.textContent = currentSong.author;
+
+  // Establece la posición del audio al valor guardado (si existe)
+  if (pausedTime) {
+    audioPlayer.currentTime = pausedTime;
+    pausedTime = 0; // Restablece la variable a 0 después de usarla
+  }
+  
   audioPlayer.play();
   togglePlayPauseButtons();
 }
@@ -51,12 +60,14 @@ function toggle() {
 // Función para pausar música
 function pauseMusic() {
   audioPlayer.pause();
+  pausedTime = audioPlayer.currentTime; // Guarda la posición actual
   togglePlayPauseButtons();
 }
 
 // Función para avanzar a la siguiente canción
 function forwardMusic() {
   currentSongIndex = (currentSongIndex + 1) % music.length;
+  seekBar.value = 0;
   playMusic();
 }
 
